@@ -3,8 +3,8 @@
  * Studio (SSR-filtered generation), Daemon HUD, Stream, Controls
  */
 
-const STREAM_URL = "https://malcolm-infinity-omniapi.pages.dev/api/infinity/stream";
-const MALCOLM_LIVE = "https://malcolmai.live";
+const STREAM_URL = "https://malcolmai-live.oliverluxthorley.workers.dev/infinity/stream";
+const MALCOLM_LIVE = "https://malcolmai-live.oliverluxthorley.workers.dev";
 
 function logEvent(msg, type = "pulse") {
   const entry = { ts: new Date().toISOString(), msg, type };
