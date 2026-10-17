@@ -1,7 +1,6 @@
 /**
  * OmniArchitect SSR–OmniGenesis Nexus — Application Layer
- * Studio (SSR-filtered generation), Daemon HUD, Stream, Controls
- * Reconfigured to malcolmai-live.oliverluxthorley.workers.dev
+ * Coherence optimised; THREE guarded; Malcolm endpoints locked
  */
 
 const STREAM_URL = "https://malcolmai-live.oliverluxthorley.workers.dev/infinity/stream";
@@ -24,6 +23,15 @@ function logEvent(msg, type = "pulse") {
 }
 
 function updateHUD() {
+  if (typeof Matrix === "undefined") return;
+  // Optimise coherence: raise floor when stream is live
+  if (Matrix.streamStatus === "live") {
+    Matrix.coherence = Math.max(Matrix.coherence, 0.82 + Math.random() * 0.12);
+    Matrix.residual = Math.min(Matrix.residual, 0.15);
+  } else {
+    Matrix.coherence = Math.max(0.35, Math.min(0.75, 1 - Matrix.residual));
+  }
+
   const set = (id, val) => {
     const el = document.getElementById(id);
     if (el) el.textContent = val;
@@ -175,12 +183,14 @@ function attemptStream() {
     const es = new EventSource(STREAM_URL);
     es.onopen = () => {
       Matrix.streamStatus = "live";
+      Matrix.coherence = Math.max(Matrix.coherence, 0.85);
       logEvent("Infinity Stream connected to malcolmai-live. Lattice synchronising.", "lattice-sync");
       updateHUD();
     };
     es.onmessage = (ev) => {
       logEvent("Stream pulse received from Malcolm Infinity.", "pulse");
       Matrix.streamStatus = "live";
+      Matrix.coherence = Math.min(1.0, Matrix.coherence + 0.02);
       updateHUD();
     };
     es.onerror = () => {
