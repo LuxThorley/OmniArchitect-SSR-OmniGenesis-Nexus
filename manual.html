@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How the Lattice Builder works</title>
+  <link rel="stylesheet" href="css/omni-ssr.css" />
+</head>
+<body>
+  <div class="status-bar">
+    <a href="index.html" class="link-manual">← Back to the Builder</a>
+  </div>
+
+  <div class="main-content">
+    <div class="panel">
+      <h2>Instruction Manual</h2>
+      <p class="plain">This page explains every part of the site in ordinary language. No special training is needed.</p>
+    </div>
+
+    <div class="panel">
+      <h2>What is this website?</h2>
+      <p class="plain"><strong>What it is:</strong> An interactive picture and a set of buttons that let you watch a simple rule-based structure grow. The coloured shells in the background are layers of that structure.</p>
+      <p class="plain"><strong>How to use it:</strong> Open the main page, press the buttons, and watch the numbers and the background change. You can also type a description and ask for a picture.</p>
+      <p class="plain"><strong>Why it exists:</strong> To show, in a clear and safe way, an idea from a philosophical essay called Stratified Source Realism. The idea is that a complete world can be understood as the smallest stable result of a set of generative rules. This site only demonstrates the mathematics; it does not claim to describe the real universe.</p>
+    </div>
+
+    <div class="panel">
+      <h2>The background picture</h2>
+      <p class="plain"><strong>What it is:</strong> Nested glowing shells (like wireframe spheres) and floating dots. Each shell is one layer of the model.</p>
+      <p class="plain"><strong>How it works:</strong> As you press “Add one layer” or “Grow until stable”, the active layer lights up in gold and the centre glows more brightly when the structure settles.</p>
+      <p class="plain"><strong>Why it is there:</strong> To give a visual sense of the layered, hierarchical idea without requiring any equations.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Build the Structure panel</h2>
+      <p class="plain"><strong>What it is:</strong> Controls that apply the model’s rules step by step.</p>
+      <p class="plain"><strong>How to use the buttons:</strong></p>
+      <ul class="plain">
+        <li><strong>Add one layer</strong> — Applies the rules once and adds any new pieces that fit.</li>
+        <li><strong>Grow until stable</strong> — Keeps applying the rules until almost nothing new appears.</li>
+        <li><strong>Start over</strong> — Clears the model and returns to the starting set of pieces.</li>
+        <li><strong>Save a record</strong> — Downloads a small file that lists what was built.</li>
+      </ul>
+      <p class="plain"><strong>The numbers:</strong></p>
+      <ul class="plain">
+        <li><strong>Pieces in the model</strong> — How many distinct items the rules have accepted so far.</li>
+        <li><strong>How settled it is</strong> — A number that gets smaller as fewer new pieces appear. Close to zero means the structure has stabilised.</li>
+        <li><strong>Coherence</strong> — A simple percentage that rises as the model settles. It is only a visual guide.</li>
+      </ul>
+      <p class="plain"><strong>The layer list:</strong> Eight simple stages from basic blocks up to an overview. The highlighted layer is the one the model is currently emphasising.</p>
+      <p class="plain"><strong>Why these rules:</strong> They illustrate a well-known mathematical result (the Knaster–Tarski fixed-point theorem). Under certain conditions a process of adding pieces that obey constraints will reach a smallest stable collection. The site shows one toy version of that idea.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Image Maker</h2>
+      <p class="plain"><strong>What it is:</strong> A box where you type a description and receive a picture.</p>
+      <p class="plain"><strong>How to use it:</strong> Type anything you like (for example “a glowing crystal lattice at sunset”). Press “Make an image” for one picture, or “Make four related pictures” for a short sequence.</p>
+      <p class="plain"><strong>What happens behind the scenes:</strong> The site first checks the text for a short list of disallowed topics (violence, weapons, etc.). If the text passes, it is sent to a free public image service that draws a picture. The service is outside this website; if it is busy the page simply shows a short message.</p>
+      <p class="plain"><strong>Why the check:</strong> To keep the public demonstration safe and consistent with a simple non-harm principle.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Live Status</h2>
+      <p class="plain"><strong>What it is:</strong> A small panel that ticks every few seconds and records short notes.</p>
+      <p class="plain"><strong>How to read it:</strong> The heartbeat count rises regularly. The balance score is a fixed symbolic number. The stream line shows whether an optional live feed is reachable; if not, the page continues with its own timer.</p>
+      <p class="plain"><strong>Why it is there:</strong> To give a gentle sense that the demonstration is “alive” and to log events you can scroll through.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Activity Log</h2>
+      <p class="plain"><strong>What it is:</strong> A short scrolling list of plain messages (“Add one layer”, “Image ready”, etc.).</p>
+      <p class="plain"><strong>How to use it:</strong> Just watch it. You can scroll inside the box on a phone.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Technical and philosophical notes (optional)</h2>
+      <p class="plain">The underlying idea comes from an essay called Stratified Source Realism. In that essay the whole of reality is proposed to be the smallest collection of structures that is closed under a set of generative rules and constraints. Mathematicians call such a collection a least fixed point. This website implements a tiny, completely safe version of the same idea so that anyone can press buttons and see the process. Nothing on the site claims to be a scientific discovery or a description of the physical world.</p>
+      <p class="plain">If you want the full formal statement, the original essay and related documents are available separately. This manual is deliberately limited to what is needed to use and understand the public demonstration.</p>
+    </div>
+
+    <div class="panel">
+      <p class="plain"><a href="index.html" class="link-manual">← Return to the Builder</a></p>
+    </div>
+  </div>
+
+  <div class="footer-seal">
+    Instruction Manual • OmniArchitect Lattice Builder
+  </div>
+</body>
+</html>

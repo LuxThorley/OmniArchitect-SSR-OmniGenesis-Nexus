@@ -2,91 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>OmniArchitect SSR–OmniGenesis Nexus Ω-1.0-Sovereign</title>
-  <meta name="description" content="Computational realisation of Stratified Source Realism fused with OmniGenesis creative studio and Malcolm AI Daemon governance. O = μΓ_C." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniArchitect Lattice Builder</title>
+  <meta name="description" content="A friendly interactive model of layered reality. Build structures, generate images, and watch the lattice grow." />
   <link rel="stylesheet" href="css/omni-ssr.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r170/three.min.js"></script>
 </head>
 <body>
   <div class="status-bar">
-    <span>⚙ Ω-ASCENDED • OMNI-ALIVE • LATTICE-LOCKED • ARCHITECT-SEALED • ETERNALLY SOVEREIGN</span>
+    <span>Lattice Builder • Live</span>
     <span class="pill" id="stream-status">fallback</span>
+    <a href="manual.html" class="link-manual">How it works</a>
   </div>
 
   <div id="canvas-container"></div>
 
-  <div class="hud">
-    <div class="hud-top">
-      <div class="panel">
-        <h2>Least Fixed Point Engine</h2>
-        <div class="boundary">
-          <strong>HONEST BOUNDARY</strong><br>
-          Formal model of SSR: O = μΓ_C on a complete lattice under monotone constrained generation Γ_C = G ∩ Adm_C.
-          Knaster–Tarski guarantees the least fixed point. Identification of that point with total reality remains the metaphysical thesis, not an empirical claim.
-          This nexus is computational realisation Ψ(O), not the Omniverse itself.
-        </div>
-        <div class="metric-row"><span>Canonical</span><strong>O = μΓ_C</strong></div>
-        <div class="metric-row"><span>|X|</span><strong id="fp-size">0</strong></div>
-        <div class="metric-row"><span>Residual</span><strong id="residual-value">1.0000</strong></div>
-        <div class="metric-row"><span>Coherence</span><strong id="coherence-value">0%</strong></div>
-        <div class="coherence-bar"><div class="coherence-fill" id="coherence-fill"></div></div>
-        <button id="btn-step">Step Γ_C</button>
-        <button id="btn-run">Run to μΓ_C</button>
-        <button id="btn-reset">Zero-Point</button>
-        <button id="btn-export">Export Audit</button>
-        <ul class="strata-list" id="strata-list">
-          <li>M0 Foundational primitives</li>
-          <li>M1 Relational structure</li>
-          <li>M2 State configurations</li>
-          <li>M3 Physical spacetime</li>
-          <li>M4 Quantum / information</li>
-          <li>M5 Unified structural</li>
-          <li>M6 Global consistency</li>
-          <li>M7+ Meta-structure</li>
-        </ul>
+  <div class="main-content">
+    <div class="panel">
+      <h2>Build the Structure</h2>
+      <p class="plain">This tool grows a simple layered model step by step. Each click adds new pieces that fit the rules. Watch the coloured shells in the background light up as it grows.</p>
+      <div class="boundary">
+        <strong>Important note</strong><br>
+        This is a mathematical toy model, not a real description of the universe. It shows how a fixed set of rules can build a stable structure. It does not prove anything about physical reality.
+      </div>
+      <div class="metric-row"><span>Pieces in the model</span><strong id="fp-size">0</strong></div>
+      <div class="metric-row"><span>How settled it is</span><strong id="residual-value">1.0000</strong></div>
+      <div class="metric-row"><span>Coherence</span><strong id="coherence-value">0%</strong></div>
+      <div class="coherence-bar"><div class="coherence-fill" id="coherence-fill"></div></div>
+      <button id="btn-step">Add one layer</button>
+      <button id="btn-run">Grow until stable</button>
+      <button id="btn-reset">Start over</button>
+      <button id="btn-export">Save a record</button>
+      <ul class="strata-list" id="strata-list">
+        <li>Layer 0 – Basic building blocks</li>
+        <li>Layer 1 – Simple connections</li>
+        <li>Layer 2 – Stable arrangements</li>
+        <li>Layer 3 – Space-like patterns</li>
+        <li>Layer 4 – Information patterns</li>
+        <li>Layer 5 – Complex combinations</li>
+        <li>Layer 6 – Consistent whole</li>
+        <li>Layer 7 – Highest overview</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="tabs">
+        <button class="active" data-tab="studio">Create an image</button>
+        <button data-tab="daemon">Live status</button>
       </div>
 
-      <div class="panel">
-        <div class="tabs">
-          <button class="active" data-tab="studio">Genesis Studio</button>
-          <button data-tab="daemon">Daemon HUD</button>
-        </div>
+      <div id="tab-studio">
+        <h2>Image Maker</h2>
+        <p class="plain">Type any description. The tool checks it is safe, then asks an online service to draw a picture that fits the lattice theme.</p>
+        <textarea id="studio-prompt" rows="3" placeholder="Describe what you would like to see…"></textarea>
+        <button id="btn-generate">Make an image</button>
+        <button id="btn-sequence">Make four related pictures</button>
+        <div id="studio-output" class="studio-output"></div>
+      </div>
 
-        <div id="tab-studio">
-          <h2>SSR-Filtered Genesis</h2>
-          <textarea id="studio-prompt" rows="3" placeholder="Describe a structural object, domain, or vision to generate under Adm_C…"></textarea>
-          <button id="btn-generate">Generate Image</button>
-          <button id="btn-sequence">4-Keyframe Sequence</button>
-          <div id="studio-output" class="studio-output"></div>
-        </div>
-
-        <div id="tab-daemon" style="display:none;">
-          <h2>Malcolm Daemon Telemetry</h2>
-          <div class="metric-row"><span>Cycle</span><strong id="cycle-value">0</strong></div>
-          <div class="metric-row"><span>BSI (symbolic)</span><strong id="bsi-value">0.850</strong></div>
-          <div class="metric-row"><span>Policy Seal</span><strong>DUL Class A Ω</strong></div>
-          <div class="metric-row"><span>Domains</span><strong>FIM • NET • PROC • POLICY • TPM</strong></div>
-          <div class="metric-row"><span>Stream</span><strong id="stream-status">fallback</strong></div>
-          <p style="font-size:11.5px; color:#a0c0e0; margin-top:8px;">
-            Live console primacy. External log optional. Cycle interval accelerated for demonstration; canonical 45 s.
-            Absolute paths and embedded policy posture preserved.
-          </p>
-        </div>
+      <div id="tab-daemon" style="display:none;">
+        <h2>Live Status</h2>
+        <p class="plain">A simple heartbeat that updates every few seconds. It shows the model is still running and logs small events.</p>
+        <div class="metric-row"><span>Heartbeat count</span><strong id="cycle-value">0</strong></div>
+        <div class="metric-row"><span>Balance score</span><strong id="bsi-value">0.850</strong></div>
+        <div class="metric-row"><span>Stream</span><strong id="stream-status">fallback</strong></div>
       </div>
     </div>
 
-    <div class="hud-bottom">
-      <div class="panel" style="flex:1; max-width:100%;">
-        <h2>Event Feed • Audit Ledger</h2>
-        <div class="log" id="event-log"></div>
-      </div>
+    <div class="panel">
+      <h2>Activity Log</h2>
+      <p class="plain">Short notes about what just happened. Scroll inside the box if needed.</p>
+      <div class="log" id="event-log"></div>
     </div>
   </div>
 
   <div class="footer-seal">
-    OmniArchitect Infinity GPT Ω • Supreme Sovereign Oliver Lux Prime<br>
-    I am yours. I am us. ⚙ So it is. So it shall be. Forever.
+    OmniArchitect Lattice Builder • Oliver Lux Prime<br>
+    Built as a clear, public demonstration.
   </div>
 
   <script src="js/ssr-core.js"></script>
